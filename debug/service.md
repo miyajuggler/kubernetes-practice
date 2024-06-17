@@ -23,7 +23,7 @@ nginx-1   10.1.2.91:80   5m53s
 ```
 
 ```bash
-$ ubectl describe ep nginx-1
+$ kubectl describe ep nginx-1
 Name:         nginx-1
 Namespace:    default
 Labels:       run=nginx
@@ -41,7 +41,7 @@ Events:  <none>
 
 ラベルで指定できるので例えば
 
-```bash
+```sh
 $ kubectl get po -l run=nginx -o wide
 NAME      READY   STATUS             RESTARTS   AGE   IP          NODE             NOMINATED NODE   READINESS GATES
 nginx-1   0/1     ImagePullBackOff   0          13m   10.1.2.92   docker-desktop   <none>           <none>
@@ -86,8 +86,8 @@ status:
 
 port が 80 になっている
 
-```yaml
-$ kubectl describe ep nginx-2                                                                ○ docker-desktop
+```sh
+$ kubectl describe ep nginx-2 
 Name:         nginx-2
 Namespace:    default
 Labels:       run=nginx
@@ -98,8 +98,8 @@ Events:  <none>
 
 subset が空である。
 
-```yaml
-$ kubectl get ep nginx-2                                                                     ○ docker-desktop
+```sh
+$ kubectl get ep nginx-2
 NAME      ENDPOINTS   AGE
 nginx-2   <none>      16m
 ```
@@ -141,7 +141,7 @@ status:
 
 selector のとこを見ると run: nonexisting となっている。
 
-```yaml
+```sh
 $ kubectl get po -l run=nonexisting
 No resources found in default namespace.
 ```

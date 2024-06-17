@@ -2,7 +2,7 @@
 
 ![](images/node.png)
 
-### 準備
+## 準備
 
 kubernetes-practice もしくは kubernetes-basics の 07-debug-kubernetes の階層に行き kubectl apply -f . を打つ
 
@@ -11,7 +11,7 @@ kubernetes-practice もしくは kubernetes-basics の 07-debug-kubernetes の�
 - pod がどの node に乗っているのかを見たいときはこれ。
 
 ```bash
-$ kubectl get po -o wide                                                     ○ docker-desktop
+$ kubectl get po -o wide   
 NAME      READY   STATUS             RESTARTS   AGE     IP          NODE             NOMINATED NODE   READINESS GATES
 nginx-1   0/1     ImagePullBackOff   0          4m59s   10.1.2.72   docker-desktop   <none>           <none>
 nginx-2   0/1     Pending            0          4m59s   <none>      <none>           <none>           <none>
@@ -21,7 +21,7 @@ nginx-3   1/1     Running            0          4m59s   10.1.2.70   docker-deskt
 - 色々見たいときは describe
 
 ```bash
-$ kubectl describe no                                                                                                                  ○ docker-desktop
+$ kubectl describe no 
 Name:               docker-desktop
 Roles:              control-plane,master
 Labels:             beta.kubernetes.io/arch=arm64
